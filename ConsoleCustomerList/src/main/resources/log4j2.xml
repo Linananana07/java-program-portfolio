@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Лог для запросов -->
+        <File name="QueriesFile" fileName="logs/queries.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+
+        <!-- Лог для ошибок -->
+        <File name="ErrorsFile" fileName="logs/errors.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!-- Логгер для запросов -->
+        <Logger name="queriesLogger" level="INFO" additivity="false">
+            <AppenderRef ref="QueriesFile"/>
+        </Logger>
+
+        <!-- Логгер для ошибок -->
+        <Logger name="errorsLogger" level="ERROR" additivity="false">
+            <AppenderRef ref="ErrorsFile"/>
+        </Logger>
+
+        <!-- Root логгер -->
+        <Root level="ERROR">
+            <AppenderRef ref="ErrorsFile"/>
+            <AppenderRef ref="QueriesFile"/>
+        </Root>
+
+    </Loggers>
+</Configuration>
