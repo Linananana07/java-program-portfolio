@@ -14,4 +14,5 @@ The program parses CSV files and extracts data about metro stations and other de
 # 5. Creating and writing JSON files:
 
 Finally, the program combines the collected data and creates two JSON files: one with information about metro lines and stations in a format similar to the SPBMetro project file, and another with detailed information about each station.
+#
 Thus, the Data Collector program automates the process of collecting data about the Moscow Metro from various sources and organizes it into a convenient JSON format for further use.
